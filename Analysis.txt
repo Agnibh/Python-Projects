@@ -10,9 +10,9 @@ Worst-Case Time Complexity: O(n)   //n-number of rows in calls.csv.
 								   //As we run only a single loop iterating through the rows of calls.csv. Built-in functions take constant time
 
 Task3-
-Worst-Case Time Complexity: O(nlogn)	//n-number of rows in calls.csv.
+Worst-Case Time Complexity: O(nlogn)	//n-numbers called by people in Bangalore
 										//Loop takes O(n) time and sorted takes O(nlogn) time. So total time is max of them i.e O(nlogn)
 
 Task4-
-Worst-Case Time Complexity: O(nlogn)	//n-number of rows in calls.csv.
-										//Loop takes O(n) time and sorted takes O(nlogn) time. So total time is max of them i.e O(nlogn)
+Worst-Case Time Complexity: O(n^2)		//n-number of rows in calls.csv.
+										//Outer Loop takes O(n) time and checking takes O(n) time for each iteration.

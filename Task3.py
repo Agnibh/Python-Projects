@@ -45,19 +45,23 @@ The percentage should have 2 decimal digits
 """
 prefix=[]
 count=0
-
+totCount=0
 for row in calls:
     if '(080)' in row[0]:
-        if '(' in row[1]:
+        totCount+=1
+        if '(0' in row[1]:
             prefix.append(row[1][1:row[1].find(')')])
-        else:
+            if '(080)' in row[1]:
+                count+=1
+        elif row[1][0] in ('7','8','9'):
             prefix.append(row[1][:4])
+        elif '140' in row[1]:
+            prefix.append('140')
+        else:
+            continue
 
 prefixSet=sorted(set(prefix))
 
-for num in prefixSet:
-    if '080' in num:
-        count+=1
 
 print('the number called by people in Bangalore have codes:\n{}'.format('\n'.join(prefixSet)))
-print('{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore'.format(count*100/len(prefixSet)))
+print('{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore'.format(count*100/totCount))
