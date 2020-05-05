@@ -30,7 +30,9 @@ textSend,textRec,textTime=zip(*texts)
 callSend,callRec,callTime,callDur=zip(*calls)
 
 for caller in callSend:
-    if '140' in caller and caller not in (textSend+textRec+callRec):
+    if caller not in (textSend+textRec+callRec):
         telemarkList.append(caller)
 
-print('These numbers could be telemarketers:\n{}'.format('\n'.join(sorted(telemarkList))))
+callerSet=sorted(set(telemarkList))
+
+print('These numbers could be telemarketers:\n{}'.format('\n'.join(callerSet)))

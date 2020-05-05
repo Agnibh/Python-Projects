@@ -48,15 +48,16 @@ count=0
 
 for row in calls:
     if '(080)' in row[0]:
-        if '140' in row[1]:
-            continue
-        elif '(' in row[1]:
-            prefix.append(row[1][:row[1].find(')')+1])
-            if '(080)' in row[1]:
-                count+=1
+        if '(' in row[1]:
+            prefix.append(row[1][1:row[1].find(')')])
         else:
             prefix.append(row[1][:4])
-sprefix=sorted(prefix)
 
-print('the number called by people in Bangalore have codes:\n{}'.format('\n'.join(sprefix)))
-print('{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore'.format(count*100/len(sprefix)))
+prefixSet=sorted(set(prefix))
+
+for num in prefixSet:
+    if '080' in num:
+        count+=1
+
+print('the number called by people in Bangalore have codes:\n{}'.format('\n'.join(prefixSet)))
+print('{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore'.format(count*100/len(prefixSet)))
