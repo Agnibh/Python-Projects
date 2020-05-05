@@ -1,0 +1,17 @@
+Task0-
+Worst-Case Time Complexity: O(1)   //As the code runs only 2 lines
+
+Task1-
+Worst-Case Time Complexity: O(1)   //As the code runs only 4 lines. Built-in functions, zip and len, take constant time in python3
+
+Task2-
+Worst-Case Time Complexity: O(n)   //n-number of rows in calls.csv. 
+								   //As we run only a single loop iterating through the rows of calls.csv. Built-in functions take constant time
+
+Task3-
+Worst-Case Time Complexity: O(nlogn)	//n-number of rows in calls.csv.
+										//Loop takes O(n) time and sorted takes O(nlogn) time. So total time is max of them i.e O(nlogn)
+										
+Task4-
+Worst-Case Time Complexity: O(nlogn)	//n-number of rows in calls.csv.
+										//Loop takes O(n) time and sorted takes O(nlogn) time. So total time is max of them i.e O(nlogn)
